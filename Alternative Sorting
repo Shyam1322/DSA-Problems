@@ -1,0 +1,23 @@
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {5, 4, 3, 2, 1};
+        int[] expectedArray = new int [arr.length];
+        Arrays.sort(arr);
+        int minimum = 0, maximum = arr.length-1, i = 0;
+        while(i<arr.length){
+            if( i%2 == 0){
+                expectedArray[i] = arr[maximum];
+                maximum --;
+            }
+            else{
+                expectedArray[i] = arr[minimum];
+                minimum ++;
+            }
+            i++;
+        }
+        System.out.println(Arrays.toString(expectedArray));
+        System.out.println(Arrays.toString(arr));
+    }
+}
